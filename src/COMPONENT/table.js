@@ -11,7 +11,7 @@ function Mytable() {
     event.preventDefault();
     try {
       const mydate=new Date(Timeanddate);
-      const res = await fetch('https://reminding-u-backend.vercel.app/settimer', {
+      const res = await fetch('http://localhost:5000/settimer', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ function Mytable() {
     const newRecords = [...records];
     try {
       const myid= records[index].id
-      const res = await fetch('https://reminding-u-backend.vercel.app/deletetimer', {
+      const res = await fetch('http://localhost:5000/deletetimer', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ function Mytable() {
   async function handleRemoveAll() {
     
     try {
-      const res = await fetch('https://reminding-u-backend.vercel.app/deleteall', {
+      const res = await fetch('http://localhost:5000/deleteall', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ function Mytable() {
           PhoneNumber:
           <input type="text" value={PhoneNumber} onChange={event => setPhoneNumber(event.target.value)} className="form-input" />
         </label>
-        <button type="submit" className="form-button">Add Book</button>
+        <button type="submit" className="form-button">Add Task</button>
       </form>
       <div>
         <h2>Records</h2>
